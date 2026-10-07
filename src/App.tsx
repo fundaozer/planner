@@ -167,7 +167,7 @@ export function App() {
       />
 
       {/* Sayfa İçeriği */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-3.5 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-8 pb-24 md:pb-8">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-6 md:py-8">
         {activeTab === 'tasks' ? (
           <TasksPage
             tasks={tasks}
@@ -205,55 +205,8 @@ export function App() {
         onRestoreBackup={handleRestoreBackup}
       />
 
-      {/* Mobil Alt Menü (Bottom Navigation Bar) */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/90 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-200/80 dark:border-slate-800/80 px-4 py-2 pb-safe shadow-2xl">
-        <div className="flex items-center justify-around max-w-md mx-auto">
-          <button
-            type="button"
-            onClick={() => setActiveTab('tasks')}
-            className={`flex flex-col items-center gap-1 py-1 px-5 rounded-2xl transition-all duration-200 cursor-pointer ${
-              activeTab === 'tasks'
-                ? 'text-indigo-600 dark:text-indigo-400 font-extrabold scale-105'
-                : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold'
-            }`}
-          >
-            <div className="relative">
-              <span className="flex items-center justify-center w-6 h-6">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={activeTab === 'tasks' ? 2.5 : 2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                </svg>
-              </span>
-              {pendingTasksCount > 0 && (
-                <span className="absolute -top-1 -right-2 px-1.5 py-0.2 bg-indigo-600 text-white rounded-full text-[9px] font-black">
-                  {pendingTasksCount}
-                </span>
-              )}
-            </div>
-            <span className="text-[11px]">{t.tasksTab}</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setActiveTab('pomodoro')}
-            className={`flex flex-col items-center gap-1 py-1 px-5 rounded-2xl transition-all duration-200 cursor-pointer ${
-              activeTab === 'pomodoro'
-                ? 'text-rose-600 dark:text-rose-400 font-extrabold scale-105'
-                : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold'
-            }`}
-          >
-            <span className="flex items-center justify-center w-6 h-6">
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={activeTab === 'pomodoro' ? 2.5 : 2}>
-                <circle cx="12" cy="12" r="9" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 7v5l3 3" />
-              </svg>
-            </span>
-            <span className="text-[11px]">{t.pomodoroTab}</span>
-          </button>
-        </div>
-      </nav>
-
       {/* Alt Bilgi */}
-      <footer className="border-t border-slate-200/80 dark:border-slate-800/80 py-6 mb-16 md:mb-0 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm">
+      <footer className="border-t border-slate-200/80 dark:border-slate-800/80 py-4 sm:py-6 mt-6 sm:mt-12 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4 text-center text-xs text-slate-500 dark:text-slate-400 space-y-1">
           <p className="font-semibold text-slate-700 dark:text-slate-300">
             {t.appTitle} &bull; {t.appSubtitle}

@@ -30,6 +30,20 @@
   padding-top: env(safe-area-inset-top, 0px);
 }
 
+/* Netlify Injected Drawer & Badge Suppression */
+[id*="netlify"],
+[class*="netlify"],
+netlify-drawer,
+.netlify-drawer,
+iframe[src*="netlify"],
+div[data-netlify-drawer],
+div[class*="netlify-feedback"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 /* Özel kaydırma çubuğu stilleri */
 ::-webkit-scrollbar {
   width: 6px;
